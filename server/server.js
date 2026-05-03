@@ -38,7 +38,7 @@ app.post("/register", async (req, res) => {
   const sheets = google.sheets({ version: "v4", auth });
 
   await sheets.spreadsheets.values.append({
-    spreadsheetId: "YOUR_SHEET_ID",
+    spreadsheetId: "1k35yFnHRRCYy4xcyjpgDl5RUCYP3vLOHf_pd3g5slsI",
     range: "Sheet1!A:D",
     valueInputOption: "RAW",
     requestBody: {
