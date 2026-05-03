@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 const http = require("http");
 const WebSocket = require("ws");
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
