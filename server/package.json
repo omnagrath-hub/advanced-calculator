@@ -12,10 +12,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "body-parser": "^2.2.2",
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "ws": "^8.20.0"
-  }
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "ws": "^8.0.0",
+    "googleapis": "^144.0.0"
 }
