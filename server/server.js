@@ -73,9 +73,8 @@ wss.on("connection", (ws) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.send("Server running");
-});
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../client")));
 
 server.listen(3000, () => {
   console.log("Server running on port 3000");
