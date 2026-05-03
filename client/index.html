@@ -3,34 +3,38 @@
 <head>
   <title>Secret Messages</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .logo {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      width: 60px;
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
-
+<img src="./logo.png" class="logo">
 <!-- LOGIN -->
 <div id="login" class="card">
   <h1>Secret Messages</h1>
   <p class="subtitle">Private group chat hub</p>
-
   <div class="mode-buttons">
     <button onclick="setMode('register')">Create Account</button>
     <button onclick="setMode('login')">Sign In</button>
   </div>
-
   <div class="form-group register-only">
     <label>First Name</label>
     <input id="firstName" placeholder="Enter your first name">
   </div>
-
   <div class="form-group register-only">
     <label>Last Name</label>
     <input id="lastName" placeholder="Enter your last name">
   </div>
-
   <div class="form-group">
     <label>Username</label>
     <input id="username" placeholder="Enter username">
   </div>
-
   <div class="form-group">
     <label>Password</label>
     <div class="password-wrapper">
@@ -38,20 +42,16 @@
       <span class="toggle" onclick="togglePassword()">👁</span>
     </div>
   </div>
-
   <button onclick="handleSubmit()">Continue</button>
 </div>
-
 <!-- CHAT -->
 <div id="chat" class="card" style="display:none;">
   <div class="chat-header">
     <h2 id="userDisplay"></h2>
-
     <div class="theme-dropdown">
       <button onclick="toggleThemeMenu()" class="theme-btn">
         🎨 Themes
       </button>
-
       <div id="themeMenu" class="theme-menu">
         <div onclick="setTheme('default')">Default</div>
         <div onclick="setTheme('space')">Space</div>
@@ -64,13 +64,10 @@
       </div>
     </div>
   </div>
-
   <div id="messages"></div>
-
   <input id="msgInput" placeholder="Write your message here...">
   <button onclick="sendMessage()">Send</button>
 </div>
-
 <script src="./app.js"></script>
 </body>
 </html>
