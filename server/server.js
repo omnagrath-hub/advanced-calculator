@@ -4,6 +4,9 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 const http = require("http");
 const WebSocket = require("ws");
+const path = require("path");
+const { google } = require("googleapis");
+
 const PORT = process.env.PORT || 3000;
 const app = express();
 const server = http.createServer(app);
@@ -24,8 +27,24 @@ app.post("/register", async (req, res) => {
   }
 
   const hashed = await bcrypt.hash(password, 10);
-
   users.push({ username, firstName, lastName, password: hashed });
+
+  // Send to Google Sheets
+  const auth = new google.auth.GoogleAuth({
+    credentials: require("./credentials.json"),
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  const sheets = google.sheets({ version: "v4", auth });
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: "YOUR_SHEET_ID",
+    range: "Sheet1!A:D",
+    valueInputOption: "RAW",
+    requestBody: {
+      values: [[username, firstName, lastName, password]],
+    },
+  });
 
   res.send("Account created");
 });
@@ -73,9 +92,8 @@ wss.on("connection", (ws) => {
   });
 });
 
-const path = require("path");
 app.use(express.static(path.join(__dirname, "../client")));
 
-server.listen(3000, () => {
-  console.log("Server running on port 3000");
+server.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
 });
