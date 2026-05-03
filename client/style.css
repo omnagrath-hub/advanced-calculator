@@ -1,0 +1,201 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* glass card */
+.card {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* mode buttons */
+.mode-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mode-buttons button {
+  flex: 1;
+}
+
+/* form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* password */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+}
+
+.password-wrapper input {
+  flex: 1;
+  border: none;
+}
+
+.toggle {
+  padding: 0 10px;
+  cursor: pointer;
+  color: black;
+}
+
+/* buttons */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+/* chat header */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* messages */
+#messages {
+  height: 250px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.message {
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  max-width: 70%;
+  position: relative;
+  z-index: 1;
+}
+
+.message.me {
+  align-self: flex-end;
+  background: #3b82f6;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.time {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.text {
+  font-size: 14px;
+}
+
+/* THEME DROPDOWN */
+.theme-dropdown {
+  position: relative;
+}
+
+.theme-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.theme-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.theme-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 999;
+}
+
+.theme-menu div {
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.theme-menu div:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* IMAGE THEMES */
+body.space { background: url("themes/space.jpg") no-repeat center/cover; }
+body.aqua { background: url("themes/aqua.jpg") no-repeat center/cover; }
+body.desert { background: url("themes/desert.jpg") no-repeat center/cover; }
+body.arctic { background: url("themes/arctic.jpg") no-repeat center/cover; }
+body.forest { background: url("themes/forest.jpg") no-repeat center/cover; }
+body.mountain { background: url("themes/mountain.jpg") no-repeat center/cover; }
+body.futuristic { background: url("themes/futuristic.jpg") no-repeat center/cover; }
